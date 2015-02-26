@@ -1,0 +1,34 @@
+{
+  "name": "stencil",
+  "version": "0.2.0",
+  "description": "A set of common, reusable style patterns for Mobify’s client services team",
+  "authors": [
+    "Mobify",
+    "Jeff Kamo <jeffkamo@mobify.com>",
+    "Kyle Peatt <kpeatt@gmail.com>",
+    "Ryan Frederick <ryan@ryanfrederick.com>"
+  ],
+  "keywords": [
+    "mobify",
+    "components",
+    "patterns"
+  ],
+  "main": "",
+  "dependencies": {
+    "spline": "1.0.1"
+  },
+  "devDependencies": {
+    "vellum": "~1.0.0",
+    "modularized-normalize-scss": "~3.0.1"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "package.json",
+    "Gruntfile.js",
+    "tests",
+    "test"
+  ],
+  "license": "MIT"
+}

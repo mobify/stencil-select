@@ -52,21 +52,6 @@ $select__line-height: 20px;
 
     user-select: none;
 
-    select {
-        position: absolute; // 1
-        top: 0;
-        left: 0;
-
-        width: 100%;
-        height: 100%;
-        padding: $select__padding;
-        border: 0;
-
-        background: none;
-
-        -webkit-appearance: none;
-    }
-
     // "Down" Triangle
     // ---
     &::after {
@@ -87,10 +72,25 @@ $select__line-height: 20px;
         margin: auto; // 2
     }
 
-    &.c--label {
+    &.c--wrapped {
         select {
             opacity: 0;
         }
+    }
+
+    select {
+        position: absolute; // 1
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+        padding: $select__padding;
+        border: 0;
+
+        background: none;
+
+        -webkit-appearance: none;
     }
 }
 
@@ -100,7 +100,7 @@ $select__line-height: 20px;
 // 1. Align label together with select base line.
 //    Aldo not-fancy select uses paddings for vertical align, we should be consistent
 
-.c-select__label {
+.c-select__inner-label {
     display: block;
     margin-right: $select__h-space;
     margin-bottom: 0;
@@ -126,10 +126,11 @@ $select__line-height: 20px;
 // Fix for Firefox
 // Attribution: http://filamentgroup.github.io/select-css/
 //
-// Hide the native select arrow by clipping it with overflow: hidden
+// 1. Hide the native select arrow by clipping it with overflow: hidden
+
 @-moz-document url-prefix() {
     .c-select {
-        overflow: hidden;
+        overflow: hidden; // 1
 
         select {
             width: calc(100% + 3em);

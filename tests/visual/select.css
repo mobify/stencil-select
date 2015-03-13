@@ -181,7 +181,6 @@ textarea {
 select {
   padding: 8px 15px;
   border-color: #bcc2c6;
-  text-indent: 5px;
   -webkit-appearance: menulist-button;
 }
 
@@ -305,20 +304,16 @@ th {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
-  overflow: hidden;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-          align-items: center;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   max-width: 100%;
   height: 40px;
-  border: 1px solid #bdc3c7;
   padding: 10px 15px;
-  border-radius: 0;
+  border: 1px solid #bdc3c7;
+  border-radius: 4px;
   background: #fff;
-  font-family: inherit;
-  font-size: inherit;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
   -webkit-user-select: none;
   user-select: none;
 }
@@ -332,7 +327,6 @@ th {
   border: 0;
   background: none;
   -webkit-appearance: none;
-  text-indent: 5px;
 }
 .c-select::after {
   width: 0;
@@ -344,7 +338,7 @@ th {
   content: '';
   position: absolute;
   top: 0;
-  right: 21px;
+  right: 15px;
   bottom: 0;
   margin: auto;
 }
@@ -356,18 +350,15 @@ th {
   display: block;
   margin-right: 21px;
   margin-bottom: 0;
+  line-height: 20px;
   text-overflow: ellipsis;
-  overflow: hidden;
-  text-indent: 5px;
 }
 
 .c-select__value {
   display: block;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-          flex: 1;
-  padding-right: 21px;
   overflow: hidden;
+  padding-right: 21px;
+  line-height: 20px;
   white-space: nowrap;
   text-overflow: ellipsis;
 }

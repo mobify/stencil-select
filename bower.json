@@ -1,7 +1,7 @@
 {
   "name": "stencil-select",
   "version": "0.1.0",
-  "description": "Select component, used when default appearance should be re-styled according to design",
+  "description": "A styleable, accessible <select> component.",
   "authors": [
     "Mobify",
     "Jeff Kamo <jeffkamo@mobify.com>",

@@ -22,7 +22,7 @@ $select__triangle-position: 15px !default; // 1
 
 $select__font-family: if(variable-exists(forms__font-family), $forms__font-family, inherit) !default;
 $select__font-size: if(variable-exists(forms__font-size), $forms__font-size, inherit) !default;
-$select__line-height: 20px;
+$select__line-height: 20px !default;
 
 
 // Select Root
@@ -72,12 +72,6 @@ $select__line-height: 20px;
         margin: auto; // 2
     }
 
-    &.c--wrapped {
-        select {
-            opacity: 0;
-        }
-    }
-
     select {
         position: absolute; // 1
         top: 0;
@@ -94,11 +88,23 @@ $select__line-height: 20px;
     }
 }
 
+
+// Select wrapped with <div>
+// ---
+
+.c-select.c--wrapped {
+    select {
+        opacity: 0;
+    }
+}
+
+
 // Additonal Elements for option with Labels nested in Select
 // ---
 //
 // 1. Align label together with select base line.
-//    Aldo not-fancy select uses paddings for vertical align, we should be consistent
+//    Simple select uses paddings for vertical align, we should be consistent
+// 2. Padding for ellipsis
 
 .c-select__inner-label {
     display: block;
@@ -109,10 +115,10 @@ $select__line-height: 20px;
     text-overflow: ellipsis;
 }
 
-.c-select__value {
+.c-select__inner-value {
     display: block;
     overflow: hidden;
-    padding-right: $select__h-space; // padding for ellipsis
+    padding-right: $select__h-space; // 2
 
     line-height: $select__line-height; // 1
     white-space: nowrap;

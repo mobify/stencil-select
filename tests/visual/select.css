@@ -331,9 +331,6 @@ th {
   bottom: 0;
   margin: auto;
 }
-.c-select.c--wrapped select {
-  opacity: 0;
-}
 .c-select select {
   position: absolute;
   top: 0;
@@ -346,6 +343,10 @@ th {
   -webkit-appearance: none;
 }
 
+.c-select.c--wrapped select {
+  opacity: 0;
+}
+
 .c-select__inner-label {
   display: block;
   margin-right: 21px;
@@ -354,7 +355,7 @@ th {
   text-overflow: ellipsis;
 }
 
-.c-select__value {
+.c-select__inner-value {
   display: block;
   overflow: hidden;
   padding-right: 21px;

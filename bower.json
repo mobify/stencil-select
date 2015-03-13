@@ -1,7 +1,7 @@
 {
-  "name": "stencil",
-  "version": "0.2.0",
-  "description": "A set of common, reusable style patterns for Mobify’s client services team",
+  "name": "stencil-select",
+  "version": "0.1.0",
+  "description": "Select component, used when default appearance should be re-styled according to design",
   "authors": [
     "Mobify",
     "Jeff Kamo <jeffkamo@mobify.com>",

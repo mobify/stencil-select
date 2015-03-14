@@ -47,16 +47,16 @@
     </article>
 
     <article class="c-test">
-        <h2 class="c-test__describe">.c-select.c--nested</h2>
+        <h2 class="c-test__describe">.c-select with nested elements</h2>
 
         <div class="c-test__case">
             <p class="c-test__should">It should create a custom styled select box</p>
             <div class="c-test__run">
 
-                <div class="c-select c--nested">
+                <div class="c-select">
                     <label class="c-select__nested-label">Label</label>
                     <span class="c-select__nested-value">Select your option</span>
-                    <select class="js-linked-element" data-linked-element=".{linkedClass}">
+                    <select class="js-linked-element c-select__hidden-select" data-linked-element=".{linkedClass}">
                         <option>Value 1</option>
                         <option>Value 2</option>
                         <option>Value 3</option>

@@ -343,10 +343,6 @@ th {
   -webkit-appearance: none;
 }
 
-.c-select.c--nested select {
-  opacity: 0;
-}
-
 .c-select__nested-label {
   display: block;
   margin-right: 21px;
@@ -361,6 +357,10 @@ th {
   line-height: 20px;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+.c-select__hidden-select {
+  opacity: 0;
 }
 
 @-moz-document url-prefix() {

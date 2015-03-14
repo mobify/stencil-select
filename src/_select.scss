@@ -10,7 +10,7 @@
 $select__height: if(variable-exists(forms__element-height), $forms__element-height, 50px) !default;
 $select__v-space: if(variable-exists(v-space), $v-space, 0.5rem) !default;
 $select__h-space: if(variable-exists(h-space), $h-space, 1rem) !default;
-$select__padding: if(variable-exists(forms__element-padding), $forms__element-padding, 10px 15px) !default;
+$select__padding: if(variable-exists(forms__element-padding), $forms__element-padding, 10px 50px 10px 15px) !default;
 
 $select__border-color: if(variable-exists(border-color), $border-color, hsl(0, 0%, 10%)) !default;
 $select__border: if(variable-exists(border), $border, 1px solid $select__border-color) !default;
@@ -89,10 +89,11 @@ $select__line-height: 20px !default;
 }
 
 
-// Select wrapped with <div>
+// Select with nested <select>, <label> and <span>
+// that are refactored to be available for styling
 // ---
 
-.c-select.c--wrapped {
+.c-select.c--nested {
     select {
         opacity: 0;
     }
@@ -106,7 +107,7 @@ $select__line-height: 20px !default;
 //    Simple select uses paddings for vertical align, we should be consistent
 // 2. Padding for ellipsis
 
-.c-select__inner-label {
+.c-select__nested-label {
     display: block;
     margin-right: $select__h-space;
     margin-bottom: 0;
@@ -115,10 +116,9 @@ $select__line-height: 20px !default;
     text-overflow: ellipsis;
 }
 
-.c-select__inner-value {
+.c-select__nested-value {
     display: block;
     overflow: hidden;
-    padding-right: $select__h-space; // 2
 
     line-height: $select__line-height; // 1
     white-space: nowrap;

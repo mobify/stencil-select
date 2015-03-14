@@ -33,7 +33,7 @@
 
                 <div class="c-select">
                     <select id="select">
-                        <option value="" disabled selected hidden>Select your option&hellip;</option>
+                        <option value="" disabled selected hidden>Select your option</option>
                         <option>Value 1</option>
                         <option>Value 2</option>
                         <option>Value 3</option>
@@ -47,15 +47,15 @@
     </article>
 
     <article class="c-test">
-        <h2 class="c-test__describe">.c-select.c--label</h2>
+        <h2 class="c-test__describe">.c-select.c--nested</h2>
 
         <div class="c-test__case">
             <p class="c-test__should">It should create a custom styled select box</p>
             <div class="c-test__run">
 
-                <div class="c-select c--wrapped">
-                    <label class="c-select__inner-label">Label</label>
-                    <span class="c-select__inner-value">Select your option&hellip;</span>
+                <div class="c-select c--nested">
+                    <label class="c-select__nested-label">Label</label>
+                    <span class="c-select__nested-value">Select your option</span>
                     <select class="js-linked-element" data-linked-element=".{linkedClass}">
                         <option>Value 1</option>
                         <option>Value 2</option>

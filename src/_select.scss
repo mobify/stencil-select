@@ -100,8 +100,8 @@ $select__line-height: 20px !default;
 // Notes:
 //
 // 1. Align label together with select base line.
-//    Simple select uses paddings for vertical align, we should be consistent
-// 2. Padding for ellipsis
+//    Simple select uses paddings for vertical align,
+//    we should be consistent and not use flexbox here
 
 .c-select__nested-label {
     display: block;
@@ -121,7 +121,7 @@ $select__line-height: 20px !default;
     text-overflow: ellipsis;
 }
 
-.c-select__hidden-select {
+.c-select__hidden-nested-select {
     opacity: 0;
 }
 

@@ -359,7 +359,7 @@ th {
   text-overflow: ellipsis;
 }
 
-.c-select__hidden-select {
+.c-select__hidden-nested-select {
   opacity: 0;
 }
 

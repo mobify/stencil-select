@@ -16,10 +16,7 @@
     "patterns"
   ],
   "authors": [
-    "Mobify",
-    "Jeff Kamo <jeffkamo@mobify.com>",
-    "Ryan Frederick <ryan@ryanfrederick.com>",
-    "Kyle Peatt <kpeatt@gmail.com>"
+    "Mobify"
   ],
   "bugs": {
     "url": "https://github.com/mobify/stencil/issues"

@@ -9,7 +9,8 @@ module.exports = function(grunt) {
             options: {
                 style: 'expanded',
                 loadPath: [
-                    './'
+                    './',
+                    './bower_components'
                 ]
             },
             compile_tests: {

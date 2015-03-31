@@ -1,7 +1,7 @@
 {
   "name": "stencil-select",
   "version": "0.0.0",
-  "description": "It should create a custom styled select box",
+  "description": "A styleable, accessible <select> component.",
   "authors": [
     "Mobify"
   ],

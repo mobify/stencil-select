@@ -1,7 +1,7 @@
 
 # Stencil Select
 
-Description goes here. This should be a couple of sentences that sum up the one thing the component is/does.
+A styleable, accessible `<select>` component.
 
 [Link to demo](#)
 
@@ -17,10 +17,11 @@ Installation instructions. Be as brief as possible without leaving out necessary
 
 ## Usage
 
-- How to 
+- How to
 
 ## Development
 
-- preview
-- 
-
+* run `npm install`
+* run `bower install`
+* run `grunt serve`
+* navigate to [localhost:3000/tests/visual](http://localhost:3000/tests/visual)

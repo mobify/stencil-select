@@ -36,8 +36,6 @@ $select__line-height: 20px;
 // ---
 //
 // 1. Absolutely position select element and triangle relative to the parent .c-select
-// 2. Vertical center the triangle
-// 3. Align select text with input text
 
 .c-select {
     position: relative; // 1
@@ -59,6 +57,32 @@ $select__line-height: 20px;
 
     user-select: none;
 
+
+    // "Down" Triangle
+    // ---
+    //
+    // 1. Absolutely position select element and triangle relative to the parent .c-select
+    // 2. Vertical center the triangle
+
+    &::after {
+        @include triangle(
+            $type: 'triangle',
+            $direction: 'down',
+            $size: $select__triangle-size,
+            $color: $select__border-color
+        );
+
+        content: '';
+
+        position: absolute; // 1, 2
+        top: 0;
+        right: $select__triangle-position;
+        bottom: 0;
+
+        margin: auto; // 2
+    }
+
+
     select {
         position: absolute; // 1
         top: 0;
@@ -72,26 +96,6 @@ $select__line-height: 20px;
         background: none;
 
         -webkit-appearance: none;
-    }
-
-    // "Down" Triangle
-    // ---
-    &::after {
-        @include triangle(
-            $type: 'triangle',
-            $direction: 'down',
-            $size: $select__triangle-size,
-            $color: $select__border-color
-        );
-
-        content: '';
-
-        position: absolute; // 1, 2
-        top: 0; // 2
-        right: $select__triangle-position;
-        bottom: 0; // 2
-
-        margin: auto; // 2
     }
 }
 

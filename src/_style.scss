@@ -16,8 +16,6 @@
 // 2. ($select__height - 20)/2 calculates vertical paddings
 
 $select__height: if(variable-exists(forms__element-height), $forms__element-height, 40px) !default;
-$select__v-space: if(variable-exists(v-space), $v-space, 0.5rem) !default;
-$select__h-space: if(variable-exists(h-space), $h-space, 1rem) !default;
 $select__padding: if(variable-exists(forms__element-padding), $forms__element-padding, ($select__height - 20)/2 50px ($select__height - 20)/2 15px) !default; // 2
 
 $select__border-color: if(variable-exists(border-color), $border-color, hsl(0, 0%, 10%)) !default;
@@ -30,7 +28,6 @@ $select__triangle-position: 15px !default; // 1
 
 $select__font-family: if(variable-exists(forms__font-family), $forms__font-family, inherit) !default;
 $select__font-size: if(variable-exists(forms__font-size), $forms__font-size, inherit) !default;
-$select__line-height: 20px !default;
 
 
 // Select Root
@@ -62,7 +59,7 @@ $select__line-height: 20px !default;
     // "Down" Triangle
     // ---
     //
-    // 1. Absolutely position select element and triangle relative to the parent .c-select
+    // 1. Relative to the parent .c-select
     // 2. Vertical center the triangle
 
     &::after {
@@ -84,6 +81,11 @@ $select__line-height: 20px !default;
     }
 
 
+    // Select
+    // ---
+    //
+    // 1. Relative to the parent .c-select
+
     select {
         position: absolute; // 1
         top: 0;
@@ -100,17 +102,18 @@ $select__line-height: 20px !default;
     }
 }
 
+
 // Platform Fixes
 // ---
-
+//
 // Fix for Firefox
 // Attribution: http://filamentgroup.github.io/select-css/
 //
-// Hide the native select arrow by clipping it with overflow: hidden
+// 1. Hide the native select arrow by clipping it with overflow: hidden
 
 @-moz-document url-prefix() {
     .c-select {
-        overflow: hidden;
+        overflow: hidden; // 1
 
         select {
             width: calc(100% + 3em);

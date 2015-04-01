@@ -28,6 +28,9 @@
     "Gruntfile.js",
     "tests"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "spline": "~1.0.1",
+    "stencil-variables": "ry5n/stencil-variables"
+  },
   "devDependencies": {}
 }

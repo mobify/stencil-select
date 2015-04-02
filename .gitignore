@@ -1,8 +1,8 @@
-.css
-.css.map
 .sass-cache/
 .idea/
 .DS_Store
 tmp/
 node_modules
 bower_components
+*.css
+*.css.map

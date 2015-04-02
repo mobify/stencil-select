@@ -18,8 +18,7 @@
   "main": [
     "src/_style.scss",
     "src/template.dust",
-    "src/schema.js",
-    "src/ui.js"
+    "src/schema.js"
   ],
   "ignore": [
     ".editorconfig",

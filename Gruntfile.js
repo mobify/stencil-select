@@ -53,6 +53,7 @@ module.exports = function(grunt) {
             server: {
                 options: {
                     hostname: '0.0.0.0',
+                    useAvailablePort: true,
                     port: 3000,
                     base: 'tests/visual',
                 }

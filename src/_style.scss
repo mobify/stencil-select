@@ -7,14 +7,14 @@
 
 @import 'spline/dist/utilities/triangle';
 @import 'stencil-variables/src/style';
+@import 'level/level';
 
 
 // Configurable Variables
 // ---
 
-// Whether to draw the css-shape-based caret or not. Useful for providing an
-// alternate icon using a different implementation.
-$select__draw-caret: true;
+// Draw the down-arrow caret? Set false to draw your own.
+$select__draw-caret: true !default;
 
 
 // Select Root
@@ -27,7 +27,6 @@ $select__draw-caret: true;
     box-sizing: border-box;
     max-width: 100%;
     min-height: $tap-size;
-    padding: $input-vertical-padding $input-horizontal-padding;
     border: $border;
 
     border-radius: $border-radius;
@@ -61,6 +60,8 @@ $select__draw-caret: true;
 
     // Select element
     // ---
+    //
+    // 1. Override user agent styles
 
     select {
         position: absolute;
@@ -69,7 +70,8 @@ $select__draw-caret: true;
 
         width: 100%;
         height: 100%;
-        padding: $input-vertical-padding $input-horizontal-padding;
+        padding-left: $input-horizontal-padding;
+        padding-right: $input-horizontal-padding;
         border: 0;
 
         background: none;

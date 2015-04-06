@@ -29,7 +29,8 @@
   ],
   "dependencies": {
     "spline": "~1.0.1",
-    "stencil-variables": "ry5n/stencil-variables"
+    "stencil-variables": "ry5n/stencil-variables",
+    "level": "mobify/level#~0.0.1"
   },
   "devDependencies": {}
 }

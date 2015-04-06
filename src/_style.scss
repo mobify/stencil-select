@@ -99,6 +99,15 @@ $select__font-size: if(variable-exists(forms__font-size), $forms__font-size, inh
         background: none;
 
         -webkit-appearance: none;
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 0 0 1px $grey-30;
+        }
+
+        &:active {
+            box-shadow: 0 0 0 1px $accent-color;
+        }
     }
 }
 

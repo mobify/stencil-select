@@ -343,6 +343,15 @@ th {
   background: none;
   -webkit-appearance: none;
 }
+.c-select select:focus {
+  outline: none;
+  -webkit-box-shadow: 0 0 0 1px #95a5a6;
+          box-shadow: 0 0 0 1px #95a5a6;
+}
+.c-select select:active {
+  -webkit-box-shadow: 0 0 0 1px #16a085;
+          box-shadow: 0 0 0 1px #16a085;
+}
 
 @-moz-document url-prefix() {
   .c-select {

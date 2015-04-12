@@ -9,7 +9,8 @@ define(function(require) {
 
     // Define any context required for the tests:
     var context = {
-        selectNode: '<select id="foo" name="foo"><option value="1">Option 1</option><option value="2">Option 2</option></select>',
+        repo: 'https://github.com/mobify/stencil-select',
+        selectMarkup: '<select id="foo" name="foo"><option value="1">Option 1</option><option value="2">Option 2</option></select>',
     };
 
     // Render

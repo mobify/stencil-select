@@ -14,7 +14,7 @@
         {/c-spec__case}
 
         {@c-spec__case expect="It should allow passing in an html string."}
-            {@c-select node=selectNode /}
+            {@c-select element=selectMarkup /}
         {/c-spec__case}
     {/c-spec__test}
 {/c-spec}

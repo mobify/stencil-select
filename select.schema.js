@@ -9,7 +9,7 @@ define(function(require) {
 
     return schema({
         '?class': String,
-        '?node': [Object, Function],
+        '?element': [Object, Function, String],
         '?id': String,
         '?name': String,
         '?disabled': Boolean,

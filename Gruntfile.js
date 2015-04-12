@@ -8,16 +8,21 @@ module.exports = function(grunt) {
         sass: {
             options: {
                 style: 'expanded',
+                sourcemap: 'none',
                 loadPath: [
                     './',
                     './bower_components',
+                ],
+                require: [
+                    'compass/import-once/activate'
                 ]
             },
             compile_tests: {
                 files: [{
                     expand: true,
-                    src: 'tests/**/*.scss',
-                    dest: '.',
+                    flatten: true,
+                    src: 'tests/visual/*.scss',
+                    dest: 'tmp',
                     ext: '.css'
                 }]
             }
@@ -34,16 +39,18 @@ module.exports = function(grunt) {
             prefix_tests: {
                 files: [{
                     expand: true,
-                    src: 'tests/**/*.css' // Overwrite compiled css.
+                    src: 'tmp/*.css' // Overwrite compiled css.
                 }]
             },
         },
 
+        clean: ['tmp', '**/*.css'],
+
         watch: {
             scss: {
                 files: [
-                    'src/**/*.scss',
-                    'tests/**/*.scss'
+                    '**/*.scss',
+                    'tests/visual/*.scss'
                 ],
                 tasks: ['default']
             }
@@ -53,15 +60,16 @@ module.exports = function(grunt) {
             server: {
                 options: {
                     hostname: '0.0.0.0',
-                    useAvailablePort: true,
                     port: 3000,
-                    base: 'tests/visual',
+                    useAvailablePort: true,
+                    base: '.',
                 }
             }
         }
     });
 
     // Default task
-    grunt.registerTask('default', ['sass', 'autoprefixer']);
-    grunt.registerTask('serve', ['default', 'connect:server', 'watch']);
+    grunt.registerTask('compile', ['sass', 'autoprefixer']);
+    grunt.registerTask('serve', ['compile', 'connect:server', 'watch']);
+    grunt.registerTask('default', ['serve']);
 };

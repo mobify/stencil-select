@@ -1,7 +1,7 @@
 {
   "name": "stencil-select",
   "version": "0.0.0",
-  "description": "A styleable, accessible <select> component.",
+  "description": "A styleable, accessible <select> component",
   "authors": [
     "Mobify"
   ],
@@ -29,8 +29,14 @@
   ],
   "dependencies": {
     "spline": "~1.0.1",
+    "level": "mobify/level#~0.0.1",
     "stencil-variables": "ry5n/stencil-variables",
-    "level": "mobify/level#~0.0.1"
+    "stencil-spec": "ry5n/stencil-spec#dust"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "dustjs-linkedin": "^2.6.0",
+    "dustjs-component": "mobify/dustjs-helper-component#compile-component",
+    "requirejs": "^2.1.0",
+    "text": "^2.0.0"
+  }
 }

@@ -1,0 +1,9 @@
+<div class="c-select {class}">
+    {?node}
+        {node|s}
+    {:else}
+        <select id="{id}" name="{name}" {?disabled}disabled{/disabled} {?required}required{/required}>
+            {body}
+        </select>
+    {/node}
+</div>

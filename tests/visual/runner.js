@@ -1,11 +1,11 @@
 define(function(require) {
     var dust = require('dustjs-component');
     var text = require('text');
-    var spec = require('text!spec.dust');
-    require('stencil-spec/spec.component');
+    var tests = require('text!tests.dust');
+    require('stencil-spec/spec.template');
 
-    // Require the component’s template loader (`*.component.js`):
-    require('../../select.component');
+    // Load and compile this component’s dust templates:
+    require('../../select.template');
 
     // Define any context required for the tests:
     var context = {
@@ -14,7 +14,7 @@ define(function(require) {
     };
 
     // Render
-    dust.renderSource(spec, context, function(err, out) {
+    dust.renderSource(tests, context, function(err, out) {
         if (!err) {
             document.querySelector('body').innerHTML = out;
         } else {

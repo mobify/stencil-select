@@ -34,7 +34,7 @@
     "stencil-spec": "ry5n/stencil-spec#dust"
   },
   "devDependencies": {
-    "dustjs-linkedin": "^2.6.0",
+    "dustjs-linkedin": "~2.6.0",
     "dustjs-component": "mobify/dustjs-helper-component#compile-component",
     "requirejs": "^2.1.0",
     "text": "^2.0.0"

@@ -32,6 +32,8 @@ $select__draw-caret: true !default;
     border-radius: $border-radius;
     background: $input-background-color;
 
+    font-family: $font-family;
+
     user-select: none;
 
 
@@ -68,8 +70,8 @@ $select__draw-caret: true !default;
 
         width: 100%;
         height: 100%;
-        padding-left: $input-horizontal-padding;
         padding-right: $input-horizontal-padding;
+        padding-left: $input-horizontal-padding;
         border: 0;
 
         background: none;
@@ -90,8 +92,8 @@ $select__draw-caret: true !default;
             width: calc(100% + 3em);
 
             &:-moz-focusring {
-              color: transparent;
-              text-shadow: 0 0 0 #000;
+                color: transparent;
+                text-shadow: 0 0 0 #000;
             }
         }
     }

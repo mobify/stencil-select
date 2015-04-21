@@ -4,7 +4,7 @@
 define(function(require) {
     var dust = require('dustjs-component');
     var text = require('text');
-    var select = require('text!./lib/select.dust');
+    var select = require('text!./select.dust');
 
     dust.loadSource(dust.compileComponent(select, 'select'));
 });

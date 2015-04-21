@@ -1,11 +1,12 @@
-<div class="c-select {class}">
+<div class="c-select {class} {?label}c--inner-label{/label}">
     {?element}
         {element|s}
     {:else}
         {?label}
             <label class="c-select__label">{label}</label>
+            <span class="c-select__value">{value}</span>
         {/label}
-        <span class="c-select__value"></span>
+
         <select id="{id}" name="{name}" {?disabled}disabled{/disabled} {?required}required{/required}>
             {body}
         </select>

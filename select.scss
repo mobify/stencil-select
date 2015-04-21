@@ -80,6 +80,37 @@ $select__draw-caret: true !default;
     }
 }
 
+// Select with Inner Label
+// ---
+
+.c-select.c--inner-label {
+    display: flex;
+    align-items: center; // vertically align inner label and value
+    padding-right: $input-horizontal-padding * 3; // padding for caret
+
+    select {
+        opacity: 0;
+    }
+}
+
+.c-select__label {
+    display: block;
+    margin: 0 $unit;
+
+    color: $neutral-70;
+}
+
+.c-select__value {
+    display: block;
+    overflow: hidden;
+    flex: 1;
+    padding-right: $input-horizontal-padding * 3; // padding for ellipsis
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-transform: lowercase;
+}
+
 
 // Hide the native select arrow in Firefox by clipping it with overflow: hidden
 // Attribution: http://filamentgroup.github.io/select-css/

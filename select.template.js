@@ -1,5 +1,5 @@
 /**
- * Loader for the component’s  Dust templates, found in lib/
+ * Loader for the component’s  Dust templates
  */
 define(function(require) {
     var dust = require('dustjs-component');

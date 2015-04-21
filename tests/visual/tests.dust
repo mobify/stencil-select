@@ -5,7 +5,7 @@
 {@c-spec for="Select" repository=repo}
     {@c-spec__test describe=".c-select"}
         {@c-spec__case expect="It should create a custom styled select box."}
-            {@c-select id="foo" name="foo"}
+            {@c-select id="foo" name="foo" label="hello world"}
                 <option value="1">Option 1</option>
                 <option value="2">Option 2</option>
                 <option value="3">Option 3</option>

@@ -1,6 +1,12 @@
 // Select
 // ===
 
+// Configurable Variables
+// ---
+
+// Draw the down-arrow caret? Set false to draw your own.
+$select__draw-caret: true !default;
+
 
 // Dependencies
 // ---
@@ -8,13 +14,6 @@
 @import 'spline/dist/utilities/triangle';
 @import 'stencil-variables/src/style';
 @import 'level/level';
-
-
-// Configurable Variables
-// ---
-
-// Draw the down-arrow caret? Set false to draw your own.
-$select__draw-caret: true !default;
 
 
 // Select Root

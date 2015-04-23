@@ -12,3 +12,11 @@
         </select>
     {/element}
 </div>
+
+<script>
+(function(require) {
+    require(["stencil-select"], function(select) {
+        select.init();
+    });
+})(require);
+</script>

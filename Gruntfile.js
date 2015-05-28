@@ -5,6 +5,22 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
+        clean: ['tmp'],
+
+        stencil_dust: {
+            options: {
+                dust: require('dustjs-linkedin')
+            },
+            templates: {
+                src: [
+                    '*.dust',
+                    'bower_components/stencil-*/**/*.dust',
+                    'tests/**/*.dust'
+                ],
+                dest: 'tmp/templates.js'
+            }
+        },
+
         sass: {
             options: {
                 style: 'expanded',
@@ -13,18 +29,11 @@ module.exports = function(grunt) {
                     './',
                     './bower_components',
                 ],
-                require: [
-                    'compass/import-once/activate'
-                ]
+                require: ['compass/import-once/activate']
             },
             compile_tests: {
-                files: [{
-                    expand: true,
-                    flatten: true,
-                    src: 'tests/visual/*.scss',
-                    dest: 'tmp',
-                    ext: '.css'
-                }]
+                src: 'tests/visual/index.scss',
+                dest: 'tmp/index.css'
             }
         },
 
@@ -43,8 +52,6 @@ module.exports = function(grunt) {
                 }]
             },
         },
-
-        clean: ['tmp', '**/*.css'],
 
         watch: {
             scss: {
@@ -68,8 +75,8 @@ module.exports = function(grunt) {
         }
     });
 
-    // Default task
-    grunt.registerTask('compile', ['sass', 'autoprefixer']);
+    // Tasks
+    grunt.registerTask('compile', ['stencil_dust', 'sass', 'autoprefixer']);
     grunt.registerTask('serve', ['compile', 'connect:server', 'watch']);
     grunt.registerTask('default', ['serve']);
 };

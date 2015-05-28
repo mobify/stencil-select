@@ -16,26 +16,23 @@
   ],
   "license": "MIT",
   "main": [
-    "select.component.js",
-    "select.schema.js",
-    "select.scss"
+    "select.dust"
   ],
   "ignore": [
     ".editorconfig",
     ".gitignore",
     "package.json",
     "Gruntfile.js",
+    "Gemfile",
+    "Gemfile.lock",
     "tests"
   ],
   "dependencies": {
-    "level": "mobify/level#~0.0.1",
-    "stencil-variables": "ry5n/stencil-variables",
-    "dustjs-component": "mobify/dustjs-helper-component#adaptive-compat",
+    "stencil-variables": "mobify/stencil-variables#*",
+    "level": ">=0.0.2",
     "spline": "~1.0.1"
   },
   "devDependencies": {
-    "stencil-spec": "ry5n/stencil-spec#dust",
-    "requirejs": "^2.1.0",
-    "text": "^2.0.0"
+    "stencil-spec": "mobify/stencil-spec#dev"
   }
 }

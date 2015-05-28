@@ -1,22 +1,23 @@
 // Select
 // ===
 
+
 // Configurable Variables
 // ---
 
-// Draw the down-arrow caret? Set false to draw your own.
+// Whether to draw the default down-arrow icon.
 $select__draw-caret: true !default;
 
 
 // Dependencies
 // ---
 
+@import 'stencil-variables/variables';
 @import 'spline/dist/utilities/triangle';
-@import 'stencil-variables/src/style';
 @import 'level/level';
 
 
-// Select Root
+// Root
 // ---
 
 .c-select {
@@ -26,12 +27,11 @@ $select__draw-caret: true !default;
     box-sizing: border-box;
     max-width: 100%;
     min-height: $tap-size;
-    border: $border;
+    border: 1px solid $border-color;
 
     border-radius: $border-radius;
-    background: $input-background-color;
 
-    font-family: $font-family;
+    font-family: inherit;
 
     user-select: none;
 
@@ -52,7 +52,7 @@ $select__draw-caret: true !default;
 
             position: absolute;
             top: 0;
-            right: $input-horizontal-padding;
+            right: $horizontal-input-padding;
             bottom: 0;
 
             margin: auto; // Vertically center the caret
@@ -69,8 +69,8 @@ $select__draw-caret: true !default;
 
         width: 100%;
         height: 100%;
-        padding-right: $input-horizontal-padding;
-        padding-left: $input-horizontal-padding;
+        padding-right: $horizontal-input-padding;
+        padding-left: $horizontal-input-padding;
         border: 0;
 
         background: none;
@@ -85,7 +85,7 @@ $select__draw-caret: true !default;
 .c-select.c--inner-label {
     display: flex;
     align-items: center; // vertically align inner label and value
-    padding-right: $input-horizontal-padding * 3; // padding for caret
+    padding-right: $horizontal-input-padding * 3; // padding for caret
 
     select {
         opacity: 0;
@@ -95,15 +95,13 @@ $select__draw-caret: true !default;
 .c-select__label {
     display: block;
     margin: 0 $unit;
-
-    color: $neutral-70;
 }
 
 .c-select__value {
     display: block;
     overflow: hidden;
     flex: 1;
-    padding-right: $input-horizontal-padding * 3; // padding for ellipsis
+    padding-right: $horizontal-input-padding * 3; // padding for ellipsis
 
     white-space: nowrap;
     text-overflow: ellipsis;

@@ -1,11 +1,15 @@
 define(function(require) {
-    var dust = require('dustjs-component');
-    var text = require('text');
-    var tests = require('text!tests.dust');
-    require('stencil-spec/spec.template');
+    var dust = require('dust-full');
+    var componentHelper = require('adaptivejs/lib/dust-component-helper');
+    var componentSugar = require('adaptivejs/lib/dust-component-sugar');
+    var templates = require('../../tmp/templates');
+    var context;
 
-    // Load and compile this component’s dust templates:
-    require('../../select.template');
+    // Register helpers for precompiled component templates.
+    dust = componentHelper(dust);
+    templates.forEach(function(name) {
+        dust.helpers[name] = componentSugar.makeHelper(name);
+    });
 
     // Define any context required for the tests:
     var context = {
@@ -14,7 +18,7 @@ define(function(require) {
     };
 
     // Render
-    dust.renderSource(tests, context, function(err, out) {
+    dust.render('tests', context, function(err, out) {
         if (!err) {
             document.querySelector('body').innerHTML = out;
         } else {

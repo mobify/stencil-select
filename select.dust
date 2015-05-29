@@ -1,4 +1,4 @@
-<div class="c-select {class} {?label}c--inner-label{/label}">
+<div class="c-select {class} {?label}c--inner-label{/label}" data-stencil="stencil-select">
     {?element}
         {element|s}
     {:else}
@@ -12,11 +12,3 @@
         </select>
     {/element}
 </div>
-
-<script>
-(function(require) {
-    require(["stencil-select"], function(select) {
-        select.init();
-    });
-})(require);
-</script>

@@ -2,7 +2,7 @@
     /* Test-specific fixture styles go here. */
 </style>
 
-{@c-spec for="Select" repository=repo}
+{@c-spec for="Select Component" repository=repo}
     {@c-spec__test describe=".c-select"}
         {@c-spec__case expect="It should create a custom styled select box."}
             {@c-select id="foo" name="foo"}

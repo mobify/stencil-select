@@ -24,7 +24,6 @@ $select__draw-caret: true !default;
     position: relative; // Allow positioning of select element and caret
 
     display: block;
-    box-sizing: border-box;
     max-width: 100%;
     min-height: $tap-size;
     border: 1px solid $border-color;

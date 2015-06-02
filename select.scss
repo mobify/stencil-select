@@ -44,6 +44,7 @@ $select__draw-caret: true !default;
     //
     // 1. Position the caret in from the right edge.
     // 2. Vertically center the caret.
+    // 3. Ensure caret does not block taps.
 
     @if ($select__draw-caret) {
         &::after {
@@ -62,6 +63,8 @@ $select__draw-caret: true !default;
             bottom: 0; // 1
 
             margin: auto; // 2
+
+            pointer-events: none; // 3
         }
     }
 

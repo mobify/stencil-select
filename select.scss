@@ -83,7 +83,7 @@ $select__draw-caret: true !default;
 
         width: 100%; // 1
         height: 100%; // 1
-        padding-right: $horizontal-input-padding;
+        padding-right: $horizontal-input-padding * 3.5;
         padding-left: $horizontal-input-padding;
         border: 0; // 2
 
@@ -103,7 +103,6 @@ $select__draw-caret: true !default;
 .c-select.c--inner-label {
     display: flex;
     align-items: center; // 1
-    padding-right: $horizontal-input-padding * 3;
 
     select {
         opacity: 0; // 2
@@ -116,7 +115,7 @@ $select__draw-caret: true !default;
 
 .c-select__label {
     display: block;
-    margin: 0 $unit;
+    margin: 0 1em 0 $unit;
 }
 
 
@@ -130,7 +129,7 @@ $select__draw-caret: true !default;
     display: block;
     overflow: hidden; // 1
     flex: 1;
-    padding-right: $horizontal-input-padding * 3; // 2
+    padding-right: $horizontal-input-padding * 3.5; // 2
 
     white-space: nowrap; // 1
     text-overflow: ellipsis; // 1

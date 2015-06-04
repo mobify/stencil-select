@@ -1,6 +1,5 @@
 {
   "name": "stencil-select",
-  "version": "0.0.0",
   "description": "A styleable, accessible <select> component",
   "authors": [
     "Mobify"

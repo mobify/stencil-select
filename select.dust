@@ -1,4 +1,4 @@
-<div class="c-select {class} {?label}c--inner-label{/label}" data-stencil="stencil-select">
+<div class="c-select {class} {?label}c--inner-label{/label}" data-adaptivejs-component="stencil-select">
     {?element}
         {element|s}
     {:else}

@@ -6,14 +6,14 @@ define(['$'], function($) {
         // Component instance properties. The `$` hash (by convention) caches
         // the root node and any sub-components.
         this.value = '';
-        this.$ = {
-            root: $el,
-            value: $el.find('.c-select__value')
+        this.dom = {
+            $root: $el,
+            $value: $el.find('.c-select__value')
         };
 
         // Event handlers should use $.proxy to preserve access to the instance
         // as `this` within the handler.
-        this.$.root.on('change', $.proxy(this.update, this));
+        this.dom.$root.on('change', $.proxy(this.update, this));
 
         // Immediately invoke any methods needed to set up initial state.
         this.update();
@@ -24,9 +24,9 @@ define(['$'], function($) {
     // value changes.
     //
     Select.prototype.update = function update() {
-        this.value = this.$.root.find('option:selected').text();
-        this.$.value.text(this.value);
-        this.$.root.trigger('select:update'); // notify subscribers
+        this.value = this.dom.$root.find('option:selected').text();
+        this.dom.$value.text(this.value);
+        this.dom.$root.trigger('select:update'); // notify subscribers
     }
 
     return {

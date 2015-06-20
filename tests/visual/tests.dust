@@ -25,5 +25,14 @@
                 <option value="4">Option 4</option>
             {/c-select}
         {/c-spec__case}
+
+        {@c-spec__case expect="Optionally, it can include an inner label."}
+            {@c-select id="bar" name="bar" label="Inner Label" value="1" disabled="true"}
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+                <option value="4">Option 4</option>
+            {/c-select}
+        {/c-spec__case}
     {/c-spec__test}
 {/c-spec}

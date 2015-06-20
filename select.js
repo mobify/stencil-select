@@ -1,24 +1,32 @@
-define(['$'], function($) {
-    var Select = function Select($el, options) {
-        this.dom = {
-            $root: $el,
-            $value: $el.find('.c-select__value')
-        };
-        this.value = '';
+define(['$', 'document-register-element'], function($, registerElement) {
+    var selectProto = Object.create(HTMLElement.prototype);
 
-        this.dom.$root.on('change', $.proxy(this.update, this));
+    selectProto.createdCallback = {value: function() {
+        console.log('Created <stencil-select> custom element.');
+
+        this.$ = {
+            root: $(this),
+            value: $(this).find('.c-select__value'),
+            select: $(this).find('select'),
+        };
+
+        this.$.root.on('change', $.proxy(this.update, this));
 
         this.update();
-    }
+    }};
 
-    Select.prototype.update = function update() {
-        this.dom.$value.text(this.dom.$root.find('option:selected').text());
-        this.dom.$root.trigger('select:update'); // notify subscribers
-    }
-
-    return {
-        'init': function($el, options) {
-            return $el.data('component') || $el.data('component', new Select($el, options));
+    selectProto.attributeChangedCallback = {value: function(name, oldValue, value) {
+        if (name === 'disabled' || name === 'required') {
+            value !== null ? this.$.select.attr(name, '') : this.$.select.removeAttr(name);
         }
-    };
+    }};
+
+    selectProto.update = {value: function() {
+        this.$.value.text(this.$.root.find('option:selected').text());
+        this.$.root.trigger('stencil-select:update'); // notify subscribers
+    }};
+
+    return document.registerElement('stencil-select', {
+        prototype: Object.create(HTMLElement.prototype, selectProto)
+    });
 });

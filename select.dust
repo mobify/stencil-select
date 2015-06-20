@@ -1,4 +1,4 @@
-<div class="c-select {class} {?label}c--inner-label{/label}" data-adaptivejs-component="stencil-select">
+<stencil-select class="c-select {class} {?label}c--inner-label{/label}" {?disabled}disabled{/disabled}>
     {?element}
         {element|s}
     {:else}
@@ -11,4 +11,4 @@
             {body}
         </select>
     {/element}
-</div>
+</stencil-select>

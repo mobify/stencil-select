@@ -23,9 +23,9 @@ define(function(require) {
         if (!err) {
             document.querySelector('body').innerHTML = out;
 
-            $('[data-adaptivejs-component="stencil-select"]').each(function(i, el) {
-                ui.init($(el));
-            });
+            // $('[data-adaptivejs-component="stencil-select"]').each(function(i, el) {
+            //     ui.init($(el));
+            // });
         } else {
             console.log(err);
         }

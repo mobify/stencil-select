@@ -1,16 +1,19 @@
 define(['$'], function($) {
     var Select = function Select($el, options) {
-        this.$el = $el;
+        this.dom = {
+            $root: $el,
+            $value: $el.find('.c-select__value')
+        };
         this.value = '';
 
-        $el.on('change', $.proxy(this.update, this));
+        this.dom.$root.on('change', $.proxy(this.update, this));
 
         this.update();
     }
 
     Select.prototype.update = function update() {
-        this.$el.find('.c-select__value').text(this.$el.find('option:selected').text());
-        this.$el.trigger('select:update'); // notify subscribers
+        this.dom.$value.text(this.dom.$root.find('option:selected').text());
+        this.dom.$root.trigger('select:update'); // notify subscribers
     }
 
     return {

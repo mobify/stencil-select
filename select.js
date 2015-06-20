@@ -1,23 +1,21 @@
 define(['$'], function($) {
-    var init = function($el, options) {
-        return new Select($el, options);
-    };
-
     var Select = function Select($el, options) {
-        var self = this;
         this.$el = $el;
         this.value = '';
-        this.$el.on('change component:update', function(event, data) {
-            self.update();
-        });
+
+        $el.on('change', $.proxy(this.update, this));
+
+        this.update();
     }
 
     Select.prototype.update = function update() {
-        this.value = this.$el.find('option:selected').text();
-        this.$el.find('.c-select__value').text(this.value);
+        this.$el.find('.c-select__value').text(this.$el.find('option:selected').text());
+        this.$el.trigger('select:update'); // notify subscribers
     }
 
     return {
-        'init': init
+        'init': function($el, options) {
+            return $el.data('component') || $el.data('component', new Select($el, options));
+        }
     };
 });

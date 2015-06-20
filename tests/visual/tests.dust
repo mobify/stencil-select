@@ -5,7 +5,7 @@
 {@c-spec for="Select Component" repository=repo}
     {@c-spec__test describe=".c-select"}
         {@c-spec__case expect="It should create a custom styled select box."}
-            {@c-select id="foo" name="foo"}
+            {@c-select id="no1" name="no1"}
                 <option value="1">Option 1</option>
                 <option value="2">Option 2</option>
                 <option value="3">Option 3</option>
@@ -18,7 +18,7 @@
         {/c-spec__case}
 
         {@c-spec__case expect="Optionally, it can include an inner label."}
-            {@c-select id="bar" name="bar" label="Inner Label" value="1"}
+            {@c-select id="no3" name="no3" label="Inner Label" value="1"}
                 <option value="1">Option 1</option>
                 <option value="2">Option 2</option>
                 <option value="3">Option 3</option>
@@ -27,7 +27,7 @@
         {/c-spec__case}
 
         {@c-spec__case expect="Optionally, it can include an inner label."}
-            {@c-select id="bar" name="bar" label="Inner Label" value="1" disabled="true"}
+            {@c-select id="no4" name="no4" label="Inner Label" value="1" disabled="true"}
                 <option value="1">Option 1</option>
                 <option value="2">Option 2</option>
                 <option value="3">Option 3</option>

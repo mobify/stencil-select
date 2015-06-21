@@ -1,4 +1,4 @@
-<stencil-select class="c-select {class} {?label}c--inner-label{/label}" {?disabled}disabled{/disabled}>
+<stencil-select class="c-select {class} {?label}c--inner-label{/label}">
     {?element}
         {element|s}
     {:else}

@@ -33,15 +33,39 @@ define(function(require) {
         // as `this` within the handler.
         this.dom.$root.on('change', 'select', $.proxy(this.changeCallback, this));
 
+        // Attribute reflection
+        // TODO This shouldn’t really be set per-instance.
+        this._mirrorAttrs = {
+            disabled: this.dom.$select,
+            required: this.dom.$select,
+        }
+        // TODO This and the mirroring stuff in attributeChangedCallback should
+        // be part of some utility so it can be removed as an authoring concern.
+        for (var attr in this._mirrorAttrs) {
+            if (this._mirrorAttrs.hasOwnProperty(attr)) {
+                this.attributeChangedCallback(attr);
+            }
+        }
+
         // Call any methods here needed on custom element creation.
         this.changeCallback();
     }};
 
     Select.attributeChangedCallback = {value: function(name, oldValue, value) {
-        // Sync some attributes from the root node to the embedded select
-        // element. This is one-way.
-        if (name === 'required' || name === 'disabled') {
-            this.dom.$select.attr(name, value);
+        // Mirror some attributes on change
+        // TODO As noted above, this is too complicated and should be automated
+        // to remove it as an authoring concern.
+        if (this._mirrorAttrs[name]) {
+            var $target = this._mirrorAttrs[name];
+
+            if (value === undefined) {
+                // When there’s no initial value (including when manually on init)
+                // sync from the target node to the root node.
+                this.dom.$root.attr(name, $target.attr(name));
+            } else {
+                // Otherwise, sync from the root to the target.
+                $target.attr(name, value);
+            }
         }
     }};
 

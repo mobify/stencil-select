@@ -1,4 +1,4 @@
-<div class="c-select {class} {?label}c--inner-label{/label}" data-stencil="stencil-select">
+<stencil-select class="c-select {class} {?label}c--inner-label{/label}">
     {?element}
         {element|s}
     {:else}
@@ -11,4 +11,4 @@
             {body}
         </select>
     {/element}
-</div>
+</stencil-select>

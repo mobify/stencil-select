@@ -7,7 +7,7 @@
             <span class="c-select__value">{value}</span>
         {/label}
 
-        <select id="{id}" name="{name}" {?disabled}disabled{/disabled} {?required}required{/required}>
+        <select {?id}id="{id}"{/id} {?name}name="{name}"{/name} {?disabled}disabled{/disabled} {?required}required{/required}>
             {body}
         </select>
     {/element}

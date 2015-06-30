@@ -5,8 +5,8 @@ define(['$'], function($) {
     var Select = function Select($el, options) {
         // Component instance properties.
         this.value = '';
-        this.$el: $el;
-        this.$valueElement: $el.find('.c-select__value');
+        this.$el = $el;
+        this.$valueElement = $el.find('.c-select__value');
 
         // Event handlers should use $.proxy to preserve access to the instance
         // as `this` within the handler.

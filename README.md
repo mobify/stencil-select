@@ -61,7 +61,7 @@ var context = {
 {/mySelectData}
 ```
 
-### Calling methods
+### Calling methods from view scripts
 
 ```javascript
 // Call the update method on an instance.

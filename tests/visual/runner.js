@@ -12,13 +12,13 @@ define(function(require) {
         dust.helpers[name] = componentSugar.makeHelper(name);
     });
 
-    // Define any context required for the tests:
+    // Define any data required for the tests.
     var context = {
         repo: 'https://github.com/mobify/stencil-select',
         selectMarkup: '<select id="foo" name="foo"><option value="1">Option 1</option><option value="2">Option 2</option></select>',
     };
 
-    // Render
+    // Render and initialize component ui.
     dust.render('tests', context, function(err, out) {
         if (!err) {
             document.querySelector('body').innerHTML = out;

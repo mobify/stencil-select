@@ -2,7 +2,7 @@ define(function(require) {
     var dust = require('dust-full');
     var componentHelper = require('adaptivejs/lib/dust-component-helper');
     var componentSugar = require('adaptivejs/lib/dust-component-sugar');
-    var ui = require('../../select');
+    var ui = require('../../select-ui');
     var templates = require('../../tmp/templates');
     var context;
 

@@ -61,6 +61,14 @@ var context = {
 {/mySelectData}
 ```
 
+### Calling methods
+
+```javascript
+// Call the update method on an instance.
+$('#something .c-select').data('component').update();
+```
+
+
 ## API
 
 ### Dust helper parameters
@@ -85,11 +93,19 @@ Variable name             | Type      | Description
 ------------------------- | --------- | -----------
 $select__draw-caret       | Boolean   | Whether to draw the default down-arrow icon. Set `false` to render your own.
 
-### UI script options
+### UI options
 
 _none_
 
-### UI script events
+### UI methods
+
+The component’s UI script instance is available via `$('.c-select').data('component')`.
+
+Method name | Parameters | Description
+----------- | ---------- | -----------------
+update      | _none_     | Force update the displayed value; call this you programmatically change the value of the underlying `<select>` element.
+
+### UI events
 
 Event name        | Data object keys     | Event description
 ----------------- | -------------------- | -----------------

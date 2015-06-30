@@ -75,7 +75,7 @@ $('#something .c-select').data('component').update();
 
 Param name | Type          | Description
 ---------- | ------------- | -----------
-class      | String        | Adds values to the class attribute of the root element
+class      | String        | Adds values to the `class` attribute of the root element
 id         | String        | Sets the `id` attribute of the underlying select element
 name       | String        | Sets the `name` attribute of the underlying select element
 element    | DOM, String   | Accepts the underlying select element as a DOM node or HTML string
@@ -103,7 +103,7 @@ The component’s UI script instance is available via `$('.c-select').data('comp
 
 Method name | Parameters | Description
 ----------- | ---------- | -----------------
-update      | _none_     | Force update the displayed value; call this you programmatically change the value of the underlying `<select>` element.
+update      | _none_     | Force update the displayed value; call this if you programmatically change the value of the underlying `<select>` element.
 
 ### UI events
 

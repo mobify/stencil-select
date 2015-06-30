@@ -83,9 +83,9 @@ label      | String        | Creates an inline label within the Select component
 
 ### Dust helper bodies
 
-Body name | Type                | Description
+Body name | Accepts             | Description
 --------- | ------------------- | -----------
-body      | `<option>` elements | Exactly as you would nest inside a native `<select>` element
+body      | `<option>` elements | Format as you would options for a native `<select>` element
 
 ### Sass configurable variables
 

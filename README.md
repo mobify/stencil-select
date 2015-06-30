@@ -2,7 +2,7 @@
 
 A styleable, accessible `<select>` component for [Mobify’s AdaptiveJS framework](http://adaptivejs.mobify.com/).
 
-[View demo](#)
+**[View demo](#)**
 
 ## Requirements
 

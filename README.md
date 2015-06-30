@@ -1,27 +1,114 @@
-
 # Stencil Select
 
-A styleable, accessible `<select>` component.
+A styleable, accessible `<select>` component for [Mobify’s AdaptiveJS framework](http://adaptivejs.mobify.com/).
 
-[Link to demo](#)
+[View demo](#)
 
 ## Requirements
 
-- Sass
-- AMD loader
-- Dust templating
+- AdaptiveJS 2.1 or greater
 
 ## Installation
 
-Installation instructions. Be as brief as possible without leaving out necessary requirements.
+```shell
+cd my-adaptive-project
+grunt component:install:select
+```
 
 ## Usage
 
-- How to
+During installation, AdaptiveJS will register a Dust helper for the component which can be used in any template.
 
-## Development
+### With a pre-existing select element
 
-* run `npm install`
-* run `bower install`
-* run `grunt serve`
-* navigate to [localhost:3000/tests/visual](http://localhost:3000/tests/visual)
+```html
+{@c-select element=selectMarkupOrElement /}
+```
+
+### With literal options
+
+```html
+{@c-select id="foo" name="foo"}
+    <option value="1">Option 1</option>
+    <option value="2">Option 2</option>
+{/c-select}
+```
+
+### With options from data
+
+Assuming a context of the form:
+
+```javascript
+var context = {
+    mySelectData: {
+        id: 'something',
+        name: 'something',
+        options: [
+            {value: '1', textContent: 'Option 1'},
+            {value: '2', textContent: 'Option 2'},
+        ],
+    },
+};
+```
+
+```html
+{#mySelectData}
+    {@c-select id=id name=name}
+        {#options}
+            <option value="{value}">{textContent}</option>
+        {/ptions}
+    {/c-select}
+{/mySelectData}
+```
+
+## API
+
+### Dust helper parameters
+
+Param name | Type          | Description
+---------- | ------------- | -----------
+class      | String        | Adds values to the class attribute of the root element
+id         | String        | Sets the `id` attribute of the underlying select element
+name       | String        | Sets the `name` attribute of the underlying select element
+element    | DOM, String   | Accepts the underlying select element as a DOM node or HTML string
+label      | String        | Creates an inline label within the Select component
+
+### Dust helper bodies
+
+Body name | Type                | Description
+--------- | ------------------- | -----------
+body      | `<option>` elements | Exactly as you would nest inside a native `<select>` element
+
+### Sass configurable variables
+
+Variable name             | Type      | Description
+------------------------- | --------- | -----------
+$select__draw-caret       | Boolean   | Whether to draw the default down-arrow icon. Set `false` to render your own.
+
+### UI script options
+
+_none_
+
+### UI script events
+
+Event name        | Data object keys     | Event description
+----------------- | -------------------- | -----------------
+select:update     | value (after update) | Emitted when the underlying native select changes.
+
+## Contributing
+
+First, read the Adaptive component documentation, especially the pages on creating components and the Stencil authoring guide. Then, clone the repo:
+
+- `git clone git@github.com:mobify/stencil-select.git`
+- `cd stencil-select`
+- `npm install && bower install`
+- Create a branch for your changes and begin development.
+- Run the test server during development to check your work (see below).
+
+### Testing
+
+Visual tests provide a way to describe the features of a component in a spec format and manually check functionality of a component. To run tests:
+
+- `grunt serve`
+- Note the local port on which the test server is running (defaults to 3000)
+- Navigate to [localhost:{port}/tests/visual](http://localhost:3000/tests/visual)

@@ -11,7 +11,7 @@ A styleable, accessible `<select>` component for [Mobify’s AdaptiveJS framewor
 ## Installation
 
 ```shell
-cd my-adaptive-project
+cd my/adaptive/project
 grunt component:install:select
 ```
 

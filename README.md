@@ -74,7 +74,7 @@ $('#something .c-select').data('component').update();
 ### Dust helper parameters
 
 Param name | Type          | Description
----------- | ------------- | -----------
+:--------- | :------------ | :----------
 class      | String        | Adds values to the `class` attribute of the root element
 id         | String        | Sets the `id` attribute of the underlying select element
 name       | String        | Sets the `name` attribute of the underlying select element
@@ -84,13 +84,13 @@ label      | String        | Creates an inline label within the Select component
 ### Dust helper bodies
 
 Body name | Accepts             | Description
---------- | ------------------- | -----------
+:-------- | :------------------ | :----------
 body      | `<option>` elements | Format as you would options for a native `<select>` element
 
 ### Sass configurable variables
 
 Variable name             | Type      | Description
-------------------------- | --------- | -----------
+:------------------------ | :-------- | :----------
 $select__draw-caret       | Boolean   | Whether to draw the default down-arrow icon. Set `false` to render your own.
 
 ### UI options
@@ -102,13 +102,13 @@ _none_
 The component’s UI script instance is available via `$('.c-select').data('component')`.
 
 Method name | Parameters | Description
------------ | ---------- | -----------------
+:---------- | :--------- | :----------------
 update      | _none_     | Force update the displayed value; call this if you programmatically change the value of the underlying `<select>` element.
 
 ### UI events
 
 Event name        | Data object keys     | Event description
------------------ | -------------------- | -----------------
+:---------------- | :------------------- | :----------------
 select:update     | value (after update) | Emitted when the underlying native select changes.
 
 ## Contributing

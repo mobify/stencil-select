@@ -4,7 +4,7 @@
     {:else}
         {?label}
             <label class="c-select__label">{label}</label>
-            <span class="c-select__value">{value}</span>
+            <span class="c-select__value"></span>
         {/label}
 
         <select {?id}id="{id}"{/id} {?name}name="{name}"{/name} {?disabled}disabled{/disabled} {?required}required{/required}>
